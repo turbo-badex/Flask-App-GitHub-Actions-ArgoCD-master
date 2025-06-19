@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    #Setting up environment
+    #Setting up the environment
       - name: Checkout code
         uses: actions/checkout@v2
 
