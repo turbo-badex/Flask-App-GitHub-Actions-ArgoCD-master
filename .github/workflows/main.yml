@@ -1,11 +1,11 @@
 name: Test and Build
 
 on:
-  push
-    #branches:
-    #  - master
-    #paths:
-    #  - '**/*'
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*'
 
 jobs:
   build:
@@ -67,12 +67,12 @@ jobs:
       # Update Githubs
       - name: Commit the changes
         run: |
-          git config --global user.email "<>"
-          git config --global user.name "GitHub Actions Bot"
+          git config --global user.email "taiwo@badex.tv"
+          git config --global user.name "turbo-badex"
           git add deploy/deploy.yaml
           git commit -m "Update deploy.yaml with new image version - ${{ env.VERSION }}"
           git remote set-url origin https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/turbo-badex/Flask-App-GitHub-Actions-ArgoCD-master.git
-          git push origin master
+          git push origin main
 
       
 
