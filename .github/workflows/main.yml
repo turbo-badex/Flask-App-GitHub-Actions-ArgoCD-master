@@ -73,10 +73,3 @@ jobs:
           git commit -m "Update deploy.yaml with new image version - ${{ env.VERSION }}"
           git remote set-url origin https://github-actions:${{ secrets.GITHUB_TOKEN }}@github.com/turbo-badex/Flask-App-GitHub-Actions-ArgoCD-master.git
           git push origin main
-
-      
-
-
-        
-      
-
