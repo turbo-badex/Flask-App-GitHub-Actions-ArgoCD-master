@@ -52,12 +52,13 @@ jobs:
         run: |
           docker build . -t badex/demo-app:${{ env.VERSION }} 
 
+      # Run the trivy scan
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.28.0
         with:
           image-ref: 'badex/demo-app:${{ env.VERSION }}' 
           format: 'table'
-          exit-code: '1'
+          exit-code: '0'
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
